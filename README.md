@@ -105,8 +105,7 @@ This project builds a scholarly document question-answering app powered by the O
 
 **Note:** Due to memory issues with Streamlit, the app may not work sometimes and gives an error. This is due to the 1GB memory limit by Streamlit.
 
-
-![demo](https://github.com/corei5/L3S-Hackathon-ORKG/assets/11629650/54001adf-813a-4b59-9efc-0fd85819b3d6)
+![demo](https://github.com/corei5/L3S-Hackathon-ORKG/assets/11629650/c10348ba-4d41-4dbc-91f5-5c9c4e5fec28)
 
 ### Problem Statement
 
