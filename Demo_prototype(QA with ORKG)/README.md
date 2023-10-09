@@ -1,1 +1,3 @@
-
+ - Need to Login in ORKG
+ - Need Huggingface access tokens for LLMs
+ - Install requirement.txt
