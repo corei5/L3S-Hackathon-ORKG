@@ -12,7 +12,7 @@ from semanticscholar import SemanticScholar
 sch = SemanticScholar()
 
 
-huggingfacehub_api_token = "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"#os.environ[""] # Store the API token in a .env file
+huggingfacehub_api_token = " " # Add the huggingfacehub API token
 orkg = ORKG(host=Hosts.PRODUCTION) # create the connector to the ORKG
 
 # Customize the layout
