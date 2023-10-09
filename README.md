@@ -12,7 +12,7 @@
 
 This project builds a scholarly document question-answering app powered by the Open Research Knowledge Graph (ORKG) and Large Language Models (LLMs) like Falcon-7B and Dolly-v2-3B using LangChain, the ChromaDB vector database.
 
-Note: Due to memory issues with Streamlit, the app may not work sometimes and give an error. This is due to the 1GB memory limit by Streamlit. Here is a video that shows how the app works: https://drive.google.com/file/d/1nkvdqdx1eMWTZqhkyzU_2IJZgOg-uS8O/view?usp=sharing
+**Note:** Due to memory issues with Streamlit, the app may not work sometimes and gives an error. This is due to the 1GB memory limit by Streamlit.
 
 ### Problem Statement
 
