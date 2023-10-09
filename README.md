@@ -130,3 +130,10 @@ This project aims to develop a Scholarly Document Question Answering app powered
 
 - [1] Open Research Knowledge Graph (ORKG) - https://orkg.org/ 
 - [2] This prototype was utilized and modified from this repository  - https://github.com/kedarghule/Document-Question-Answering 
+
+## Contribution
+ - Gollam Rabby
+ - Yaser Jaradeh
+ - Allard Oelen
+ - Ildar Baimuratov
+ - Tim Wittenborg
