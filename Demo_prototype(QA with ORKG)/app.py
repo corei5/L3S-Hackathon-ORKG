@@ -19,9 +19,31 @@ orkg = ORKG(host=Hosts.PRODUCTION) # create the connector to the ORKG
 st.set_page_config(page_title="ORKGQA", page_icon="🤖", layout="wide", )
 st.markdown(f"""
             <style>
-            .stApp {{background-image: url("https://blogs.tib.eu/wp/tib/wp-content/uploads/sites/3/2020/01/ORKG_Gesamt_Facebook.jpg .."); 
-                     background-attachment: fixed;
-                     background-size: cover}}
+            .stApp:before {{
+                background-image: 
+                    linear-gradient(
+                        rgba(128, 134, 155, 0.8), 
+                        rgba(128, 134, 155, 0.8)
+                        ),
+                    url("https://blogs.tib.eu/wp/tib/wp-content/uploads/sites/3/2020/01/ORKG_Gesamt_Facebook.jpg");
+                background-attachment: fixed;
+                background-size: cover;
+                background-color: black;
+                content: " ";
+                position: absolute;
+                top: 0; 
+                left: 0;
+                width: 100%; 
+                height: 100%;  
+                opacity: .5; 
+                z-index: 0;
+            }}
+            .block-container > div > div {{
+                background: white;
+                padding: 10px;
+                border-radius: 15px;
+                box-sizing: content-box;
+            }}
          </style>
          """, unsafe_allow_html=True)
 
