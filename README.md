@@ -6,7 +6,98 @@
 
 ## Notebook
 
-- The notebook contains the installation process and example codes related to this hackathon.  
+- The notebook contains the installation process and example codes related to this hackathon.
+
+Example: 
+
+```
+def get_paper_via_doi(doi: str):
+  dois = connector.literals.get_all(q=doi, exact=True).content
+  if len(dois) > 0:
+    # Found the id of DOI predicate from here https://orkg.org/resource/R36109?noRedirect
+    statements = connector.statements.get_by_object_and_predicate(predicate_id="P26", object_id=dois[0]["id"]).content
+    return statements[0]["subject"]
+  else:
+    return None
+
+get_paper_via_doi("10.1101/2020.03.03.20029983")
+```
+```
+from orkg import ORKG, Hosts
+from collections import Counter
+
+filters = []
+print('Starting to add filters')
+while True:
+
+  # Inputing a property
+  prop_label = input('Enter a property label or "ok" if you have enough filters: ')
+  if prop_label == 'ok':
+    break
+  response = orkg.predicates.get(q = prop_label, exact = False, size = 10)
+  if response.succeeded and response.content:
+    [print(prop) for prop in response.content]
+  else:
+    print('No properties found, enter a filter again')
+    continue
+  prop_id = input('Enter ID of a selected property: ')
+  response = orkg.predicates.by_id(id = prop_id)
+  if not response.succeeded or not response.content:
+    print('Wrong ID, enter a filter again')
+    continue
+
+  # Inputing a property value
+  obj_label = input('Enter a resource label: ')
+  response = orkg.resources.get(q = obj_label, exact = False, size = 10)
+  if response.succeeded and response.content:
+    [print(obj) for obj in response.content]
+  else:
+    print('No resources found, enter a filter again')
+    continue
+  obj_id = input('Enter ID of a selected resource: ')
+  if not orkg.resources.exists(obj_id):
+    print('Wrong ID, enter a filter again')
+    continue
+
+  filters.append((prop_id, obj_id))
+
+print('Your filters:')
+for filter in filters:
+  print(f'property: {filter[0]}, resource: {filter[1]}')
+
+# Quering contributions
+contrs = []
+for filter in filters:
+  prop = filter[0]
+  obj = filter[1]
+  response = orkg.statements.get_by_object_and_predicate(object_id = obj, predicate_id = prop)
+  if response.succeeded:
+    for contr in response.content:
+      contrs.append(contr['subject']['id'])
+
+print('Found related contributions:')
+for contr_id, count in Counter(contrs).items():
+  print(f'contribution id: {contr_id}, number of mathes: {count}')
+
+# Quering papers
+print('Getting papers by related contributions')
+while True:
+  contr_id = input('Enter ID of a selected contribution, or "q" to quit: ')
+  if contr_id == 'q':
+    break
+  response = connector.statements.get_by_object_and_predicate(object_id = contr_id, predicate_id = 'P31', size = 10)
+  if response.succeeded:
+    paper = response.content[0]
+    paper_id = paper['subject']['id']
+    print(f'ID of a paper with the selected contribution: {paper_id}')
+    response = connector.statements.get_by_subject_and_predicate(subject_id = paper_id, predicate_id = 'P26')
+    if response.succeeded and response.content:
+      doi = response.content[0]['object']['label']
+      print(f'DOI of the paper: {doi}')
+  else:
+    print('Wrong ID, enter ID again')
+    continue
+```
 
 ## Playground (Demo Prototype: Document Question Answering with ORKG using LLMs)
 
