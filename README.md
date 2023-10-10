@@ -12,7 +12,7 @@ In this repository, you'll find various resources, links, and code snippets to h
 
 - The notebook contains the installation process and example codes related to this hackathon.
 
-Example: 
+## Demo code
 
 ```
 def get_paper_via_doi(doi: str):
