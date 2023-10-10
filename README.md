@@ -155,7 +155,7 @@ For more detail (example code): https://github.com/corei5/L3S-Hackathon-ORKG/blo
 - [1] Open Research Knowledge Graph (ORKG) - https://orkg.org/ 
 - [2] This prototype was utilized and modified from this repository  - https://github.com/kedarghule/Document-Question-Answering 
 
-## Contribution
+## Contributors
  - Gollam Rabby
  - Yaser Jaradeh
  - Ildar Baimuratov
