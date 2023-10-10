@@ -26,6 +26,21 @@ def get_paper_via_doi(doi: str):
 
 get_paper_via_doi("10.1101/2020.03.03.20029983")
 ```
+
+```
+def get_contributions_of_paper(paper_id: str):
+  if connector.resources.exists(paper_id):
+    # P31 is the predicate that connects papers to contributions
+    # It can be found when exploring any paper resource in the ORKG
+    statements = connector.statements.get_by_subject_and_predicate(subject_id=paper_id, predicate_id="P31").content
+    return [st["object"] for st in statements]
+  else:
+    raise ValueError("Paper doesn't exist in the system!")
+
+get_contributions_of_paper("R36109")
+
+```
+
 ```
 from orkg import ORKG, Hosts
 from collections import Counter
