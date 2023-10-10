@@ -37,6 +37,9 @@ This project aims to develop a Scholarly Document Question Answering app powered
 ## Demo code
 
 ```
+from orkg import ORKG, Hosts # import base class from package
+connector = ORKG(host=Hosts.SANDBOX) # create the connector to the ORKG
+
 def get_paper_via_doi(doi: str):
   dois = connector.literals.get_all(q=doi, exact=True).content
   if len(dois) > 0:
@@ -50,6 +53,9 @@ get_paper_via_doi("10.1101/2020.03.03.20029983")
 ```
 
 ```
+from orkg import ORKG, Hosts # import base class from package
+connector = ORKG(host=Hosts.SANDBOX) # create the connector to the ORKG
+
 def get_contributions_of_paper(paper_id: str):
   if connector.resources.exists(paper_id):
     # P31 is the predicate that connects papers to contributions
@@ -66,6 +72,7 @@ get_contributions_of_paper("R36109")
 ```
 from orkg import ORKG, Hosts
 from collections import Counter
+connector = ORKG(host=Hosts.SANDBOX) # create the connector to the ORKG
 
 filters = []
 print('Starting to add filters')
