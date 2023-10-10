@@ -82,28 +82,28 @@ while True:
   prop_label = input('Enter a property label or "ok" if you have enough filters: ')
   if prop_label == 'ok':
     break
-  response = orkg.predicates.get(q = prop_label, exact = False, size = 10)
+  response = connector.predicates.get(q = prop_label, exact = False, size = 10)
   if response.succeeded and response.content:
     [print(prop) for prop in response.content]
   else:
     print('No properties found, enter a filter again')
     continue
   prop_id = input('Enter ID of a selected property: ')
-  response = orkg.predicates.by_id(id = prop_id)
+  response = connector.predicates.by_id(id = prop_id)
   if not response.succeeded or not response.content:
     print('Wrong ID, enter a filter again')
     continue
 
   # Inputing a property value
   obj_label = input('Enter a resource label: ')
-  response = orkg.resources.get(q = obj_label, exact = False, size = 10)
+  response = connector.resources.get(q = obj_label, exact = False, size = 10)
   if response.succeeded and response.content:
     [print(obj) for obj in response.content]
   else:
     print('No resources found, enter a filter again')
     continue
   obj_id = input('Enter ID of a selected resource: ')
-  if not orkg.resources.exists(obj_id):
+  if not connector.resources.exists(obj_id):
     print('Wrong ID, enter a filter again')
     continue
 
@@ -118,7 +118,7 @@ contrs = []
 for filter in filters:
   prop = filter[0]
   obj = filter[1]
-  response = orkg.statements.get_by_object_and_predicate(object_id = obj, predicate_id = prop)
+  response = connector.statements.get_by_object_and_predicate(object_id = obj, predicate_id = prop)
   if response.succeeded:
     for contr in response.content:
       contrs.append(contr['subject']['id'])
