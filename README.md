@@ -32,7 +32,7 @@ This project aims to develop a Scholarly Document Question Answering app powered
 
 ## Notebook
 
-- The notebook contains the installation process and example codes related to this hackathon.
+- Notebooks contain the installation process and example codes related to this hackathon.
 
 ## Demo code
 
@@ -147,6 +147,7 @@ while True:
     continue
 ```
 
+For more detail (example code): https://github.com/corei5/L3S-Hackathon-ORKG/blob/main/Notebook/L3S_Retreat_ORKG_app_example.ipynb 
 
 
 ### Reference
@@ -157,6 +158,6 @@ while True:
 ## Contribution
  - Gollam Rabby
  - Yaser Jaradeh
- - Allard Oelen
  - Ildar Baimuratov
+ - Allard Oelen
  - Tim Wittenborg
