@@ -18,6 +18,16 @@ streamlit run app.py
 
 ### API 
 
+- for requirements see _requirements.txt_
+- run _l3s_retreat_orkg_app_example_api.py_
+- for test run _test.py_
+
+Methods:
+- get_proptery_id(label, size)
+- get_resource_id(label, size)
+- get_contribution_id(), body: [[property_id, resource_id], ...]
+- get_paper_id(contribution_id)
+- get_paper_data(paper_id)
 
 ### Reference
 

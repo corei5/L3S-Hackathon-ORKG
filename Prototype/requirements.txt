@@ -1,0 +1,3 @@
+Flask==2.3.2
+orkg==0.18.0
+Requests==2.31.0
