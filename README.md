@@ -83,3 +83,4 @@ For more detail (example code): https://github.com/corei5/L3S-Hackathon-ORKG/blo
  - Ildar Baimuratov
  - Allard Oelen
  - Tim Wittenborg
+ - Sagnik Basu
