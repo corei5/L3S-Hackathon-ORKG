@@ -18,6 +18,12 @@ streamlit run app.py
 
 ### API 
 
+Methods:
+- get_proptery_id(label, size)
+- get_resource_id(label, size)
+- get_contribution_id([[property_id, resource_id], ...])
+- get_paper_id(contribution_id)
+- get_paper_data(paper_id)
 
 ### Reference
 
