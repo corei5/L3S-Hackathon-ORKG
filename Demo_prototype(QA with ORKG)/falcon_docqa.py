@@ -7,7 +7,7 @@ from langchain.text_splitter import CharacterTextSplitter, RecursiveCharacterTex
 from langchain.vectorstores import Chroma
 from langchain.embeddings import HuggingFaceEmbeddings
 
-huggingfacehub_api_token=""
+huggingfacehub_api_token="" 
 
 # Customize the layout
 st.set_page_config(page_title="DocQA", page_icon="🤖", layout="wide", )     
