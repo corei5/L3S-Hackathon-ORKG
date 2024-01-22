@@ -16,7 +16,7 @@ This project builds a scholarly document question-answering app powered by the O
 
 ![demo](https://github.com/corei5/L3S-Hackathon-ORKG/assets/11629650/c10348ba-4d41-4dbc-91f5-5c9c4e5fec28)
 
-This project aims to develop a Scholarly Document Question Answering app powered by Large Language Models (LLMs), such as Falcon-7B and Dolly-v2-3B, utilizing the LangChain platform and the ChromaDB vector database. By leveraging the capabilities of LLMs, this app aims to provide users with accurate and comprehensive answers to their questions within a given document corpus.
+This project aims to develop a Scholarly Document Question Answering app powered by Large Language Models (LLMs), such as Falcon-7B and Dolly-v2-3B, utilizing the ChromaDB vector database. By leveraging the capabilities of LLMs, this app aims to provide users with accurate and comprehensive answers to their questions within a given document corpus.
 
 ### Methodology
 
